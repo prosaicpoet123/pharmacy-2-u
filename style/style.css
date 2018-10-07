@@ -18,3 +18,40 @@
     max-width: 960px;
     margin: 0 auto;
 }
+
+/* Overwrite Bootstrap table styles */
+
+.table {
+    border-spacing: 0px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.table thead>tr>th {
+    border: none;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #0071a2;
+}
+
+.row-no-padding[class*="col-"] {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+}
+
+/* Overwrite Bootstrap placeholder color */
+
+::placeholder {
+    color: #ccc;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: #ccc;
+}
+
+::-ms-input-placeholder {
+    color: #ccc;
+}
+

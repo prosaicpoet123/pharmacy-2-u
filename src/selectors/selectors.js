@@ -2,11 +2,23 @@ export const initialState = {
 		items: [
 		{
 			id: "1",
-			name: "Product 1",
+			name: "Aspirin",
 			variants: [
 				{
 					name: "",
 				},
+				{
+					name: "",
+				},
+				{
+					name: "",
+				},
+				{
+					name: "",
+				},
+				{
+					name: "",
+				}
 			],
 		},
 		{
