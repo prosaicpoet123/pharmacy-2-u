@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import lodash from 'lodash'
+
+//Actions
+import { dispatchSearch } from '../../actions/index';
 
 class MedicationList extends Component {
 
@@ -36,6 +40,7 @@ class MedicationList extends Component {
             currentDisplayed: newlyDisplayed
         });
 
+        this.props.dispatchSearch(e.target.value)
     }
 
     handleMouseDown(e) {
@@ -114,10 +119,14 @@ class MedicationList extends Component {
 
 }
 
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({dispatchSearch}, dispatch);
+}
+
 function mapStateToProps(state) {
     return {
         items: state.shop.items
     }
 }
 
-export default connect(mapStateToProps)(MedicationList);
+export default connect(mapStateToProps, mapDispatchToProps)(MedicationList);
