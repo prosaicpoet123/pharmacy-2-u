@@ -1,5 +1,4 @@
 export const initialState = {
-	shop: {
 		items: [
 		{
 			id: "1",
@@ -46,8 +45,10 @@ export const initialState = {
 				},
 			],
 		},
-	]},
+	],
 
 	basket: []
 
 }
+
+export const shopItemsSelector = state => state.shop.items

@@ -1,0 +1,20 @@
+/* Header */
+
+.header {
+    height: 101px;
+    background-color: #0071a2;
+    width: 100%;
+    z-index: 999;
+}
+
+.header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* Page Container */
+
+.page-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
