@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { initialState } from '../selectors/selectors'
+import { reducer as searchReducer} from 'redux-search'
 
 const rootReducer = combineReducers({
   shop: combineReducers({

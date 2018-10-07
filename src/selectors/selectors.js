@@ -2,7 +2,7 @@ export const initialState = {
 		items: [
 		{
 			id: "1",
-			name: "Aspirin",
+			name: "aspirin",
 			variants: [
 				{
 					name: "",
@@ -23,7 +23,7 @@ export const initialState = {
 		},
 		{
 			id: "2",
-			name: "Product 2",
+			name: "banana",
 			variants: [
 				{
 					name: "",
@@ -32,7 +32,7 @@ export const initialState = {
 		},
 		{
 			id: "3",
-			name: "Product 3",
+			name: "orange",
 			variants: [
 				{
 					name: "",
@@ -41,7 +41,7 @@ export const initialState = {
 		},
 		{
 			id: "4",
-			name: "Product 4",
+			name: "grapefruit",
 			variants: [
 				{
 					name: "",

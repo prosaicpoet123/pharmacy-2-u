@@ -1,17 +1,49 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import lodash from 'lodash'
 
 class MedicationList extends Component {
 
     constructor(props) {
         super(props);
-    
-        this.state = {term: ''};
-    
-      }
 
-    handleChange(e) {
-        console.log(e.target.value);
+        this.state = {
+            focused: false,
+            searchTerm: '',
+            currentDisplayed: this.props.items,
+        };
+
+        this.onInputChange = this.onInputChange.bind(this);
+        this.onFocus = this.onFocus.bind(this);
+        this.onBlur = this.onBlur.bind(this);
+
+    }
+
+    onFocus() {
+        this.setState({focused: true})
+    }
+
+    onBlur() {
+        this.setState({focused: false})
+    }
+
+    onInputChange(e) {
+        let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.value.toLowerCase()));
+
+        this.setState({
+            searchTerm: e.target.value,
+            currentDisplayed: newlyDisplayed
+        });
+
+    }
+
+    renderSearchTerms() {
+        return this.state.currentDisplayed.map((item) => {
+            return (
+                <li>{item.name}</li>
+            )
+        }
+        )
     }
 
     render() {
@@ -33,7 +65,21 @@ class MedicationList extends Component {
                             <td colSpan="4">
                                 <form className="form-inline d-flex">
                                     <div className="form-group col-12 col-sm-12 col-md-3">
-                                        <input className="form-control" placeholder="Type drug name here" onChange={this.handleChange.bind(this)} />
+                                        <div className="field-with-dropdown">
+                                            <div class="dropdown-content">
+                                                <input 
+                                                    type="text" 
+                                                    placeholder="Type drug name here" 
+                                                    className="form-control" 
+                                                    onChange={this.onInputChange.bind(this)} 
+                                                    onFocus={this.onFocus} 
+                                                    onBlur={this.onBlur}
+                                                />
+                                                <div className="search-list">
+                                                    {this.renderSearchTerms()}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div className="form-group col-12 col-sm-12 col-md-9">
                                         <select className="custom-select" defaultValue="" disabled>
