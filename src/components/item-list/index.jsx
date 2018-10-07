@@ -14,6 +14,7 @@ class MedicationList extends Component {
         };
 
         this.onInputChange = this.onInputChange.bind(this);
+        this.handleMouseDown = this.handleMouseDown.bind(this);
         this.onFocus = this.onFocus.bind(this);
         this.onBlur = this.onBlur.bind(this);
 
@@ -37,20 +38,28 @@ class MedicationList extends Component {
 
     }
 
+    handleMouseDown(e) {
+        this.setState({
+            searchTerm: e.target.id
+        })
+    }
+
     renderSearchTerms() {
-        return this.state.currentDisplayed.map((item) => {
-            return (
-                <li>{item.name}</li>
+        if(this.state.focused && this.state.searchTerm.length) {
+            return this.state.currentDisplayed.map((item, index) => {
+                return (
+                    <li className="list-group-item text-uppercase" id={item.name} key={item.name + index} onMouseDown={this.handleMouseDown}>{item.name}</li>
+                )
+            }
             )
-        }
-        )
+        } 
     }
 
     render() {
         return (
             <div>
-                <h1>Your Medication</h1>
-                <h2>Medication list</h2>
+                <h1 className="mb-4">Your Medication</h1>
+                <h2 className="mb-3">Medication list</h2>
                 <table className="table">
                     <thead>
                         <tr className="d-flex align-items-center">
@@ -66,17 +75,20 @@ class MedicationList extends Component {
                                 <form className="form-inline d-flex">
                                     <div className="form-group col-12 col-sm-12 col-md-3">
                                         <div className="field-with-dropdown">
-                                            <div class="dropdown-content">
-                                                <input 
-                                                    type="text" 
-                                                    placeholder="Type drug name here" 
-                                                    className="form-control" 
-                                                    onChange={this.onInputChange.bind(this)} 
-                                                    onFocus={this.onFocus} 
-                                                    onBlur={this.onBlur}
-                                                />
+                                            <div className="dropdown-content">
                                                 <div className="search-list">
-                                                    {this.renderSearchTerms()}
+                                                    <input 
+                                                        type="text" 
+                                                        placeholder="Type drug name here" 
+                                                        className="form-control" 
+                                                        onChange={this.onInputChange.bind(this)} 
+                                                        onFocus={this.onFocus} 
+                                                        onBlur={this.onBlur}
+                                                        value={this.state.searchTerm}
+                                                    />
+                                                    <ul className="list-group">
+                                                        {this.renderSearchTerms()}
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>

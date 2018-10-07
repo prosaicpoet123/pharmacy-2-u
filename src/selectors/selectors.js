@@ -2,7 +2,7 @@ export const initialState = {
 		items: [
 		{
 			id: "1",
-			name: "aspirin",
+			name: "asparaginase",
 			variants: [
 				{
 					name: "",
@@ -23,7 +23,7 @@ export const initialState = {
 		},
 		{
 			id: "2",
-			name: "banana",
+			name: "aspav",
 			variants: [
 				{
 					name: "",
@@ -32,7 +32,7 @@ export const initialState = {
 		},
 		{
 			id: "3",
-			name: "orange",
+			name: "aspirin",
 			variants: [
 				{
 					name: "",
@@ -41,7 +41,7 @@ export const initialState = {
 		},
 		{
 			id: "4",
-			name: "grapefruit",
+			name: "aspro",
 			variants: [
 				{
 					name: "",

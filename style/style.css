@@ -16,7 +16,17 @@
 
 .page-inner {
     max-width: 960px;
-    margin: 0 auto;
+    margin: 24px auto 0 auto;
+}
+
+/* Typography */
+
+.page-inner h1 {
+    color: #00567a;
+}
+
+.page-inner h2 {
+    color: #0071a2;
 }
 
 /* Overwrite Bootstrap table styles */
@@ -40,19 +50,19 @@
       padding-right: 0 !important;
 }
 
-/* Overwrite Bootstrap placeholder color */
+/* Search results list */
 
-::placeholder {
-    color: #ccc;
-    opacity: 1;
+.list-group {
+    min-width: 193px;
+    position: absolute;
+    z-index: 999;
 }
 
-:-ms-input-placeholder {
-    color: #ccc;
+.list-group-item:hover {
+    background-color: #0071a2;
+    color: #fff;
+    cursor: pointer;
 }
 
-::-ms-input-placeholder {
-    color: #ccc;
-}
 
 
