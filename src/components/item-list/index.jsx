@@ -7,32 +7,10 @@ import lodash from 'lodash'
 import { dispatchSearch } from '../../actions/index';
 
 //Components
-
-import SearchField from '../search-field/search-field'
+import SearchField from '../search-field'
+import VariantSelector from '../variant-selector'
 
 class MedicationList extends Component {
-
-    renderDropdown() {
-        if (this.props.search.result) {
-            return (
-                <select className="custom-select" defaultValue="">
-                    <option value="">Select</option>
-                    {this.props.search.result.variants.map((variant, index) => {
-                        return (
-                            <option value={variant.id} key={variant.id + index}>{variant.name}</option>
-                        );
-                    })}
-                </select>
-            )
-        }
-
-        return (
-            <select className="custom-select" defaultValue="" disabled>
-                <option value="">Select</option>
-            </select>
-        )
-
-    }
 
     render() {
         return (
@@ -52,12 +30,8 @@ class MedicationList extends Component {
                         <tr>
                             <td colSpan="4">
                                 <form className="form-inline d-flex">
-                                    <div className="form-group col-12 col-sm-12 col-md-3">
-                                        <SearchField />
-                                    </div>
-                                    <div className="form-group col-12 col-sm-12 col-md-9">
-                                        {this.renderDropdown()}
-                                    </div>
+                                    <SearchField />
+                                    <VariantSelector />
                                 </form>
                             </td>
                         </tr>
@@ -75,8 +49,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
     return {
-        items: state.shop.items,
-        search: state.shop.search
+        items: state.shop.items
     }
 }
 

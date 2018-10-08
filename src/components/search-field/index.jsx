@@ -4,7 +4,10 @@ import { bindActionCreators } from 'redux';
 import lodash from 'lodash'
 
 //Actions
-import { dispatchSearch } from '../../actions/index';
+import { 
+    dispatchSearchResult, 
+    dispatchSearchTerm 
+} from '../../actions';
 
 class SearchField extends Component {
 
@@ -13,7 +16,6 @@ class SearchField extends Component {
 
         this.state = {
             focused: false,
-            searchTerm: '',
             currentDisplayed: this.props.items,
             result: undefined
         };
@@ -35,13 +37,13 @@ class SearchField extends Component {
 
     handleChange(e) {
         let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.value.toLowerCase()));
+        this.props.dispatchSearchTerm(e.target.value)
         this.setState({
-            searchTerm: e.target.value,
             currentDisplayed: newlyDisplayed,
         }, () => {
-            let result = _.find(this.props.items, { "name": this.state.searchTerm.toLowerCase()});
-            this.props.dispatchSearch(
-                {result}, () => {
+            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase() });
+            this.props.dispatchSearchResult(
+                {result},() => {
                     this.renderDropdown();
                 }
             )
@@ -53,11 +55,10 @@ class SearchField extends Component {
         this.setState({
             searchTerm: e.target.id
         });
-        this.handleSearch(e)
     }
 
     renderSearchTerms() {
-        if (this.state.focused && this.state.searchTerm.length) {
+        if (this.state.focused && this.props.search.searchTerm.length) {
             return this.state.currentDisplayed.map((item, index) => {
                 return (
                     <li className="list-group-item text-uppercase" id={item.name} key={item.name + index} onMouseDown={this.handleMouseDown}>{item.name}</li>
@@ -91,37 +92,40 @@ class SearchField extends Component {
 
     render() {
         return (
-        <div className="field-with-dropdown">
-            <div className="dropdown-content">
-                <div className="search-list">
-                    <input
-                        id="searchInput"
-                        type="text"
-                        placeholder="Type drug name here"
-                        className="form-control"
-                        onChange={(e) => { this.handleChange(e) }}
-                        onFocus={this.onFocus}
-                        onBlur={this.onBlur}
-                        value={this.state.searchTerm}
-                    />
-                    <ul className="list-group">
-                        {this.renderSearchTerms()}
-                    </ul>
+            <div className="form-group col-12 col-sm-12 col-md-3">
+                <div className="field-with-dropdown">
+                    <div className="dropdown-content">
+                        <div className="search-list">
+                            <input
+                                id="searchInput"
+                                type="text"
+                                placeholder="Type drug name here"
+                                className="form-control"
+                                onChange={(e) => { this.handleChange(e) }}
+                                onFocus={this.onFocus}
+                                onBlur={this.onBlur}
+                                value={this.props.search.searchTerm}
+                            />
+                            <ul className="list-group">
+                                {this.renderSearchTerms()}
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         )
     }
 
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ dispatchSearch }, dispatch);
+    return bindActionCreators({ dispatchSearchResult, dispatchSearchTerm }, dispatch);
 }
 
 function mapStateToProps(state) {
     return {
-        items: state.shop.items
+        items: state.shop.items,
+        search: state.shop.search
     }
 }
 
