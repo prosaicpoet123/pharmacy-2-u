@@ -5,19 +5,24 @@ export const initialState = {
 			name: "asparaginase",
 			variants: [
 				{
-					name: "",
+					name: "Variant 1",
+					id: "1"
 				},
 				{
-					name: "",
+					name: "Variant 2",
+					id: "2"
 				},
 				{
-					name: "",
+					name: "Variant 3",
+					id: "3"
 				},
 				{
-					name: "",
+					name: "Variant 4",
+					id: "4"
 				},
 				{
-					name: "",
+					name: "Variant 5",
+					id: "5"
 				}
 			],
 		},
@@ -26,8 +31,25 @@ export const initialState = {
 			name: "aspav",
 			variants: [
 				{
-					name: "",
+					name: "Variant 6",
+					id: "1"
 				},
+				{
+					name: "Variant 7",
+					id: "2"
+				},
+				{
+					name: "Variant 8",
+					id: "3"
+				},
+				{
+					name: "Variant 9",
+					id: "4"
+				},
+				{
+					name: "Variant 10",
+					id: "5"
+				}
 			],
 		},
 		{
@@ -35,8 +57,25 @@ export const initialState = {
 			name: "aspirin",
 			variants: [
 				{
-					name: "",
+					name: "Variant 11",
+					id: "1"
 				},
+				{
+					name: "Variant 12",
+					id: "2"
+				},
+				{
+					name: "Variant 13",
+					id: "3"
+				},
+				{
+					name: "Variant 14",
+					id: "4"
+				},
+				{
+					name: "Variant 15",
+					id: "5"
+				}
 			],
 		},
 		{
@@ -44,8 +83,25 @@ export const initialState = {
 			name: "aspro",
 			variants: [
 				{
-					name: "",
+					name: "Variant 16",
+					id: "1"
 				},
+				{
+					name: "Variant 17",
+					id: "2"
+				},
+				{
+					name: "Variant 18",
+					id: "3"
+				},
+				{
+					name: "Variant 19",
+					id: "4"
+				},
+				{
+					name: "Variant 20",
+					id: "5"
+				}
 			],
 		},
 		{
@@ -53,8 +109,25 @@ export const initialState = {
 			name: "Product 5",
 			variants: [
 				{
-					name: "",
+					name: "Variant 21",
+					id: "1"
 				},
+				{
+					name: "Variant 22",
+					id: "2"
+				},
+				{
+					name: "Variant 23",
+					id: "3"
+				},
+				{
+					name: "Variant 24",
+					id: "4"
+				},
+				{
+					name: "Variant 25",
+					id: "5"
+				}
 			],
 		},
 	],
@@ -62,5 +135,3 @@ export const initialState = {
 	basket: []
 
 }
-
-export const shopItemsSelector = state => state.shop.items

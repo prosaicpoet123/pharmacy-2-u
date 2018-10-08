@@ -15,6 +15,7 @@ class MedicationList extends Component {
             focused: false,
             searchTerm: '',
             currentDisplayed: this.props.items,
+            result: undefined
         };
 
         this.onInputChange = this.onInputChange.bind(this);
@@ -25,22 +26,30 @@ class MedicationList extends Component {
     }
 
     onFocus() {
-        this.setState({focused: true})
+        this.setState({ focused: true })
     }
 
     onBlur() {
-        this.setState({focused: false})
+        this.setState({ focused: false })
     }
 
     onInputChange(e) {
         let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.value.toLowerCase()));
-
         this.setState({
             searchTerm: e.target.value,
-            currentDisplayed: newlyDisplayed
+            currentDisplayed: newlyDisplayed,
+        }, () => {
+            let result = _.find(this.props.items, { "name": this.state.searchTerm.toLowerCase()})
+            this.setState(
+                {result}, () => {
+                    console.log(this.state.currentDisplayed)
+                    this.renderDropdown()
+                }
+            )
         });
 
         this.props.dispatchSearch(e.target.value)
+
     }
 
     handleMouseDown(e) {
@@ -50,15 +59,38 @@ class MedicationList extends Component {
     }
 
     renderSearchTerms() {
-        if(this.state.focused && this.state.searchTerm.length) {
+        if (this.state.focused && this.state.searchTerm.length) {
             return this.state.currentDisplayed.map((item, index) => {
                 return (
                     <li className="list-group-item text-uppercase" id={item.name} key={item.name + index} onMouseDown={this.handleMouseDown}>{item.name}</li>
                 )
             }
             )
-        } 
+        }
     }
+
+    renderDropdown() {
+        if (this.state.result) {
+            return (
+                <select className="custom-select" defaultValue="">
+                    <option value="">Select</option>
+                    {this.state.result.variants.map((variant, index) => {
+                        return (
+                            <option value={variant.id} key={variant.id + index}>{variant.name}</option>
+                        );
+                    })}
+                </select>
+            )
+        }
+
+        return (
+            <select className="custom-select" defaultValue="" disabled>
+                <option value="">Select</option>
+            </select>
+        )
+
+    }
+
 
     render() {
         return (
@@ -82,12 +114,12 @@ class MedicationList extends Component {
                                         <div className="field-with-dropdown">
                                             <div className="dropdown-content">
                                                 <div className="search-list">
-                                                    <input 
-                                                        type="text" 
-                                                        placeholder="Type drug name here" 
-                                                        className="form-control" 
-                                                        onChange={this.onInputChange.bind(this)} 
-                                                        onFocus={this.onFocus} 
+                                                    <input
+                                                        type="text"
+                                                        placeholder="Type drug name here"
+                                                        className="form-control"
+                                                        onChange={this.onInputChange.bind(this)}
+                                                        onFocus={this.onFocus}
                                                         onBlur={this.onBlur}
                                                         value={this.state.searchTerm}
                                                     />
@@ -99,14 +131,7 @@ class MedicationList extends Component {
                                         </div>
                                     </div>
                                     <div className="form-group col-12 col-sm-12 col-md-9">
-                                        <select className="custom-select" defaultValue="" disabled>
-                                            <option value="" disabled>Select</option>
-                                            {this.props.items.map((item, index) => {
-                                                return (
-                                                    <option value={item.id} key={item.id + index}>{item.name}</option>
-                                                );
-                                            })}
-                                        </select>
+                                        {this.renderDropdown()}
                                     </div>
                                 </form>
                             </td>
@@ -120,7 +145,7 @@ class MedicationList extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({dispatchSearch}, dispatch);
+    return bindActionCreators({ dispatchSearch }, dispatch);
 }
 
 function mapStateToProps(state) {
