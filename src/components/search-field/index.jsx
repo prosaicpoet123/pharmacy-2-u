@@ -4,9 +4,9 @@ import { bindActionCreators } from 'redux';
 import lodash from 'lodash'
 
 //Actions
-import { 
-    dispatchSearchResult, 
-    dispatchSearchTerm 
+import {
+    dispatchSearchResult,
+    dispatchSearchTerm
 } from '../../actions';
 
 class SearchField extends Component {
@@ -37,13 +37,13 @@ class SearchField extends Component {
 
     handleChange(e) {
         let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.value.toLowerCase()));
-        this.props.dispatchSearchTerm(e.target.value)
+        this.props.dispatchSearchTerm(e.target.value);
         this.setState({
             currentDisplayed: newlyDisplayed,
         }, () => {
             let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase() });
             this.props.dispatchSearchResult(
-                {result},() => {
+                { result }, () => {
                     this.renderDropdown();
                 }
             )
@@ -52,16 +52,21 @@ class SearchField extends Component {
     }
 
     handleMouseDown(e) {
-        this.setState({
-            searchTerm: e.target.id
-        });
+        this.props.dispatchSearchTerm(e.target.id);
     }
 
     renderSearchTerms() {
         if (this.state.focused && this.props.search.searchTerm.length) {
             return this.state.currentDisplayed.map((item, index) => {
                 return (
-                    <li className="list-group-item text-uppercase" id={item.name} key={item.name + index} onMouseDown={this.handleMouseDown}>{item.name}</li>
+                    <li
+                        className="list-group-item text-uppercase"
+                        id={item.name}
+                        key={item.name + index}
+                        onMouseDown={this.handleMouseDown}
+                    >
+                        {item.name}
+                    </li>
                 )
             }
             )
@@ -119,7 +124,10 @@ class SearchField extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ dispatchSearchResult, dispatchSearchTerm }, dispatch);
+    return bindActionCreators({
+        dispatchSearchResult,
+        dispatchSearchTerm
+    }, dispatch);
 }
 
 function mapStateToProps(state) {

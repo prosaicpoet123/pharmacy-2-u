@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { resetSearch, resetSearchTerm } from '../../actions';
+
+// Actions
+import { 
+    resetSearch, 
+    resetSearchTerm, 
+    addToList 
+} from '../../actions';
 
 class VariantSelector extends Component {
 
@@ -14,6 +20,7 @@ class VariantSelector extends Component {
 
     handleChange(e) {
         let selected = _.filter(this.props.search.searchResult.result.variants, item => item.id.includes(e.target.value.toLowerCase()));
+        this.props.addToList(selected)
         this.props.resetSearch()
         this.props.resetSearchTerm()
     }
@@ -56,7 +63,11 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ resetSearch, resetSearchTerm }, dispatch);
+    return bindActionCreators({ 
+        resetSearch, 
+        resetSearchTerm, 
+        addToList 
+    }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(VariantSelector)
