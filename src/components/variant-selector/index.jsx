@@ -20,7 +20,7 @@ class VariantSelector extends Component {
 
     handleChange(e) {
         let selected = _.filter(this.props.search.searchResult.result.variants, item => item.id.includes(e.target.value.toLowerCase()));
-        this.props.addToList(selected)
+        this.props.addToList(selected[0])
         this.props.resetSearch()
         this.props.resetSearchTerm()
     }
