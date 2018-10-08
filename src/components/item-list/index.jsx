@@ -9,6 +9,7 @@ import { dispatchSearch } from '../../actions/index';
 //Components
 import SearchField from '../search-field'
 import VariantSelector from '../variant-selector'
+import SelectedItems from '../selected-items'
 
 class MedicationList extends Component {
 
@@ -27,6 +28,7 @@ class MedicationList extends Component {
                         </tr>
                     </thead>
                     <tbody>
+                        <SelectedItems />
                         <tr>
                             <td colSpan="4">
                                 <form className="form-inline d-flex">
