@@ -3,6 +3,7 @@ export const RESET_SEARCH = 'RESET_SEARCH';
 export const DISPATCH_SEARCH_TERM = 'DISPATCH_SEARCH_TERM';
 export const RESET_SEARCH_TERM = 'RESET_SEARCH_TERM';
 export const ADD_TO_LIST = 'ADD_TO_LIST';
+export const REMOVE_FROM_LIST = 'REMOVE_FROM_LIST';
 
 export function dispatchSearchResult(searchResult) {
 	return {
@@ -37,4 +38,11 @@ export function addToList(selection) {
 		type: ADD_TO_LIST,
 		payload: selection
 	};
+}
+
+export function removeFromList(selection) {
+	return {
+		type: REMOVE_FROM_LIST,
+		payload: selection
+	}
 }

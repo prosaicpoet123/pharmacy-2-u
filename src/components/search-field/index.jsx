@@ -16,8 +16,7 @@ class SearchField extends Component {
 
         this.state = {
             focused: false,
-            currentDisplayed: this.props.items,
-            result: undefined
+            currentDisplayed: this.props.items
         };
 
         this.handleChange = this.handleChange.bind(this);
