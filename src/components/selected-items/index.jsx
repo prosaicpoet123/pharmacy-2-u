@@ -4,7 +4,8 @@ import { bindActionCreators } from 'redux';
 
 //Actions
 import {
-    removeFromList
+    removeFromList,
+    toggleSelected
 } from '../../actions';
 
 class SelectedItems extends Component {
@@ -12,11 +13,12 @@ class SelectedItems extends Component {
         super(props);
 
         this.handleClick = this.handleClick.bind(this);
-        this.handleSelect = this.handleSelect.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
     }
 
-    handleSelect(e) {
-        console.log(e.target.value)
+    handleToggle(index) {
+        console.log(index)
+        this.props.toggleSelected(index)
     }
 
     handleClick(index) {
@@ -36,13 +38,13 @@ class SelectedItems extends Component {
                     </td>
                     <td className="col-3 col-sm-3 text-capitalize font-italic">{item.dosageDetails}</td>
                     <td className="col-3 col-sm-2 text-capitalize">{item.lastDispensed}</td>
-                    <td className="col-3 col-sm-2">
+                    <td className="col-3 col-sm-2 d-flex justify-content-around">
                         {item.selected ?
-                            <button value={index} type="button" className="btn btn-outline-success btn-sm" onClick={this.handleSelect}>-</button>
+                            <button type="button" className="btn btn-outline-success btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>-</button>
                             :
-                            <button value={index} type="button" className="btn btn-outline-success btn-sm" onClick={this.handleSelect}>+</button>
+                            <button type="button" className="btn btn-outline-success btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>+</button>
                         }
-                        <button value={index} className="btn btn-secondary btn-sm" onClick={() => this.handleClick(index)}>Delete</button>
+                        <button type="button" className="btn btn-secondary btn-sm" onClick={() => this.handleClick(index)}>Delete</button>
                     </td>
                 </tr>
             )
@@ -65,7 +67,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
-        removeFromList
+        removeFromList,
+        toggleSelected
     }, dispatch);
 }
 

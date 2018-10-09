@@ -86,6 +86,14 @@ tr.row.selected td {
     color: #28a745;
 }
 
+/* Button overwrites */
+
+.selected .btn.btn-outline-success {
+    border-radius: 30px;
+    padding: 7px 14px;
+    border-width: 2px;
+}
+
 
 
 
