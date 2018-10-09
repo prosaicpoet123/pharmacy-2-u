@@ -17,6 +17,7 @@
 .page-inner {
     max-width: 960px;
     margin: 24px auto 0 auto;
+    padding: 0px 8px;
 }
 
 /* Typography */
@@ -38,7 +39,7 @@
     border-collapse: unset;
 }
 
-.table thead>tr>th {
+.table thead>tr>th, .table tbody>tr>td {
     border: none;
     font-size: 12px;
     line-height: 1.2;
@@ -46,9 +47,10 @@
     color: #0071a2;
 }
 
-.row-no-padding[class*="col-"] {
-      padding-left: 0 !important;
-      padding-right: 0 !important;
+.table .row {
+    border-bottom: 1px solid #ddd;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 /* Search results list */
@@ -68,6 +70,23 @@
     color: #fff;
     cursor: pointer;
 }
+
+/* Selected items */
+
+tr.row.selected {
+    border-bottom: 2px solid #28a745;
+    background: rgba(40, 167, 69, 0.05);
+}
+
+tr.row.selected:first-child {
+    border-top: 2px solid #28a745;
+}
+
+tr.row.selected td {
+    color: #28a745;
+}
+
+
 
 
 

@@ -41,12 +41,8 @@ class SearchField extends Component {
         this.setState({
             currentDisplayed: newlyDisplayed,
         }, () => {
-            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase() });
-            this.props.dispatchSearchResult(
-                { result }, () => {
-                    this.renderDropdown();
-                }
-            )
+            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase()});
+            this.props.dispatchSearchResult({ result });
         });
 
     }
@@ -71,28 +67,6 @@ class SearchField extends Component {
             }
             )
         }
-    }
-
-    renderDropdown() {
-        if (this.state.result) {
-            return (
-                <select className="custom-select" defaultValue="">
-                    <option value="">Select</option>
-                    {this.state.result.variants.map((variant, index) => {
-                        return (
-                            <option value={variant.id} key={variant.id + index}>{variant.name}</option>
-                        );
-                    })}
-                </select>
-            )
-        }
-
-        return (
-            <select className="custom-select" defaultValue="" disabled>
-                <option value="">Select</option>
-            </select>
-        )
-
     }
 
     render() {

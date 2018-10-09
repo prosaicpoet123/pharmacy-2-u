@@ -32,7 +32,7 @@ class VariantSelector extends Component {
                     <option value="">Select</option>
                     {this.props.search.searchResult.result.variants.map((variant, index) => {
                         return (
-                            <option value={variant.id} key={variant.id + index}>{variant.name}</option>
+                            <option value={variant.id} key={variant.id + index}>{variant.description}</option>
                         );
                     })}
                 </select>

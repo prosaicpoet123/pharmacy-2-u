@@ -18,27 +18,29 @@ class MedicationList extends Component {
             <div>
                 <h1 className="mb-4">Your Medication</h1>
                 <h2 className="mb-3">Medication list</h2>
-                <table className="table">
-                    <thead>
-                        <tr className="d-flex align-items-center">
-                            <th scope="col" className="col-3 col-md-6">Item</th>
-                            <th scope="col" className="col-3 col-md-2">Dosage Details</th>
-                            <th scope="col" className="col-3 col-md-2">Last Dispensed</th>
-                            <th scope="col" className="col-3 col-md-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <SelectedItems />
-                        <tr>
-                            <td colSpan="4">
-                                <form className="form-inline d-flex">
-                                    <SearchField />
-                                    <VariantSelector />
-                                </form>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div>
+                    <table className="table">
+                        <thead>
+                            <tr className="row align-items-center">
+                                <th scope="col" className="col-3 col-sm-5">Items</th>
+                                <th scope="col" className="col-3 col-sm-3">Dosage Details</th>
+                                <th scope="col" className="col-3 col-sm-2">Last Dispensed</th>
+                                <th scope="col" className="col-3 col-sm-2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <SelectedItems />
+                            <tr>
+                                <td colSpan="4">
+                                    <form className="form-inline d-flex">
+                                        <SearchField />
+                                        <VariantSelector />
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         );
     }

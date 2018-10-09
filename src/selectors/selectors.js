@@ -57,25 +57,68 @@ export const initialState = {
 			name: "aspirin",
 			variants: [
 				{
-					name: "Variant 11",
+					name: "aspirin",
+					description: "caplets 300mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
 					id: "1"
 				},
 				{
-					name: "Variant 12",
+					name: "aspirin",
+					description: "dispersible tablet 300mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
 					id: "2"
 				},
 				{
-					name: "Variant 13",
+					name: "aspirin",
+					description: "dispersible tablet 300mg + 200mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
 					id: "3"
 				},
 				{
-					name: "Variant 14",
+					name: "aspirin",
+					description: "dispersible tablet 75mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
 					id: "4"
 				},
 				{
-					name: "Variant 15",
+					name: "aspirin",
+					description: "ec tablets 75mg effervescent tablet",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
 					id: "5"
-				}
+				},
+				{
+					name: "aspirin",
+					description: "enteric coated tablets 300mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
+					id: "6"
+				},
+				{
+					name: "aspirin",
+					description: "enteric coated tablets 75mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
+					id: "7"
+				},
+				{
+					name: "aspirin",
+					description: "gastro-resistant tablets 300mg",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
+					id: "8"
+				},
+				{
+					name: "aspirin",
+					description: "powder",
+					dosageDetails: "we will get this from your gp",
+					lastDispensed: "none",
+					id: "9"
+				},
 			],
 		},
 		{
