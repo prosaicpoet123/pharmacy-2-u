@@ -59,64 +59,64 @@ export const initialState = {
 				{
 					name: "aspirin",
 					description: "caplets 300mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "1"
 				},
 				{
 					name: "aspirin",
 					description: "dispersible tablet 300mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "2"
 				},
 				{
 					name: "aspirin",
 					description: "dispersible tablet 300mg + 200mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "3"
 				},
 				{
 					name: "aspirin",
 					description: "dispersible tablet 75mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "4"
 				},
 				{
 					name: "aspirin",
 					description: "ec tablets 75mg effervescent tablet",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "5"
 				},
 				{
 					name: "aspirin",
 					description: "enteric coated tablets 300mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "6"
 				},
 				{
 					name: "aspirin",
 					description: "enteric coated tablets 75mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "7"
 				},
 				{
 					name: "aspirin",
 					description: "gastro-resistant tablets 300mg",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "8"
 				},
 				{
 					name: "aspirin",
 					description: "powder",
-					dosageDetails: "we will get this from your gp",
-					lastDispensed: "none",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "9"
 				},
 			],

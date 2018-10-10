@@ -36,13 +36,13 @@ class SelectedItems extends Component {
                         <h6 className="text-uppercase">{item.name}</h6>
                         <span className="text-lowercase font-italic">{item.description}</span>
                     </td>
-                    <td className="col-3 col-sm-3 text-capitalize font-italic">{item.dosageDetails}</td>
-                    <td className="col-3 col-sm-2 text-capitalize">{item.lastDispensed}</td>
+                    <td className="col-3 col-sm-3 font-italic">{item.dosageDetails}</td>
+                    <td className="col-3 col-sm-2">{item.lastDispensed}</td>
                     <td className="col-3 col-sm-2 d-flex justify-content-around">
                         {item.selected ?
-                            <button type="button" className="btn btn-outline-success btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>-</button>
+                            <button type="button" className="btn btn-outline-success btn-round btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>-</button>
                             :
-                            <button type="button" className="btn btn-outline-success btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>+</button>
+                            <button type="button" className="btn btn-success btn-round btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>+</button>
                         }
                         <button type="button" className="btn btn-secondary btn-sm" onClick={() => this.handleClick(index)}>Delete</button>
                     </td>

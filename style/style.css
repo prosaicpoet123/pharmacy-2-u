@@ -88,13 +88,10 @@ tr.row.selected td {
 
 /* Button overwrites */
 
-.selected .btn.btn-outline-success {
+.btn.btn-round {
     border-radius: 30px;
-    padding: 7px 14px;
+    padding: 4px 11px;
     border-width: 2px;
+    width: 34px;
+    height: 34px;
 }
-
-
-
-
-
