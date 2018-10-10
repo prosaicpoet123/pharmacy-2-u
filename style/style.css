@@ -28,6 +28,36 @@
     background-size: cover;
 }
 
+.basket-flyout {
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 515px;
+    border: 1px solid #e7eaec;
+    background: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,.2);
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,.2);
+    z-index: 999;
+}
+
+.basket-flyout .bf-note .icon {
+    width: 24px;
+    height: 26px;
+    background-position: -200px -65px;
+    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png) no-repeat;
+}
+
+.basket-flyout .bf-arrow {
+    position: absolute;
+    width: 28px;
+    height: 14px;
+    top: -14px;
+    right: 65px;
+    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png) no-repeat -63px 0;
+}
+
 @media only screen and (max-width: 600px) {
 
     .trust-bar {
