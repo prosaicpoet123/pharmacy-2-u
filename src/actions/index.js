@@ -5,6 +5,8 @@ export const RESET_SEARCH_TERM = 'RESET_SEARCH_TERM';
 export const ADD_TO_LIST = 'ADD_TO_LIST';
 export const REMOVE_FROM_LIST = 'REMOVE_FROM_LIST';
 export const TOGGLE_SELECTED = 'TOGGLE_SELECTED';
+export const DISPATCH_UPDATE_MINI_BASKET_STATUS = 'DISPATCH_UPDATE_MINI_BASKET_STATUS';
+
 
 export function dispatchSearchResult(searchResult) {
 	return {
@@ -45,12 +47,20 @@ export function removeFromList(selection) {
 	return {
 		type: REMOVE_FROM_LIST,
 		payload: selection
-	}
+	};
 }
 
 export function toggleSelected(selection) {
 	return {
 		type: TOGGLE_SELECTED,
 		payload: selection
-	}
+	};
+}
+
+export function dispatchUpdateMiniBasketStatus(status) {
+	console.log(status)
+	return {
+		type: DISPATCH_UPDATE_MINI_BASKET_STATUS,
+		payload: status
+	};
 }

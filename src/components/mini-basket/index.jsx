@@ -4,11 +4,27 @@ import { bindActionCreators } from 'redux';
 
 class MiniBasket extends Component {
 
+    renderMiniBasket() {
+        if(this.props.miniBasket.active) {
+            return (
+                <div>My name jeff</div>
+            )
+        }
+    }
+
     render () {
         return (
-            <div className="mini-basket"></div>
+            <div>
+                {this.renderMiniBasket()}
+            </div>
         )
     }
 }
 
-export default MiniBasket
+function mapStateToProps(state) {
+    return {
+        miniBasket: state.shop.miniBasket
+    }
+}
+
+export default connect(mapStateToProps, null)(MiniBasket)

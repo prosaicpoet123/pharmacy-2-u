@@ -5,6 +5,7 @@ import { initialState } from '../selectors/selectors'
 import searchReducer from './search_reducer'
 import searchTermReducer from './search_term_reducer'
 import addToListReducer from './add_to_list_reducer'
+import miniBasketReducer from './mini_basket_reducer'
 
 const rootReducer = combineReducers({
   shop: combineReducers({
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     search: combineReducers({
       searchResult: searchReducer,
       searchTerm: searchTermReducer
-    })
+    }),
+    miniBasket: miniBasketReducer
     })
 });
 

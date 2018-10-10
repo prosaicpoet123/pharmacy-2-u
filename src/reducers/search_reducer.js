@@ -1,4 +1,4 @@
-import { DISPATCH_SEARCH_RESULT, RESET_SEARCH } from '../actions/index';
+import { DISPATCH_SEARCH_RESULT, RESET_SEARCH } from '../actions';
 
 export default function(state = {}, action) {
 	switch(action.type) {
