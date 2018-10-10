@@ -1,24 +1,31 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import HeaderBasket from '../../components/header-basket';
 
 class Header extends Component {
-    render () {
+    render() {
         return (
             <header>
+                <div className="trust-bar"></div>
                 <div className="header">
-                    <div className="header-inner">
+                    <div className="header-fixed d-flex align-items-center">
+                        <div className="d-flex align-items-center pt-2 pb-2 pb-sm-4 pt-sm-4 header-inner">
+                            <div className="col-6 col-sm-4">
+                                <a className="p2u-logo d-block" href="/">
+                                </a>
+                            </div>
+                            <div className="col-2 col-sm-3"></div>
+                            <div className="col-2 col-sm-2"></div>
+                            <div className="col-2 col-sm-3">
+                                <HeaderBasket />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
         );
     }
-        
+
 }
 
-function mapStateToProps(state) {
-    return {
-        items: state.shop.basket
-    }
-}
 
-export default connect(mapStateToProps)(Header);
+export default Header;

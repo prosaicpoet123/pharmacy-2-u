@@ -1,19 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import lodash from 'lodash'
-
-//Actions
-import { dispatchSearch } from '../../actions/index';
 
 //Components
 import SearchField from '../search-field'
 import VariantSelector from '../variant-selector'
 import SelectedItems from '../selected-items'
 
-class MedicationList extends Component {
+const MedicationList = () => {
 
-    render() {
         return (
             <div>
                 <h1 className="mb-4">Your Medication</h1>
@@ -39,18 +34,7 @@ class MedicationList extends Component {
                 </div>
             </div>
         );
-    }
 
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ dispatchSearch }, dispatch);
-}
-
-function mapStateToProps(state) {
-    return {
-        items: state.shop.items
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(MedicationList);
+export default MedicationList;

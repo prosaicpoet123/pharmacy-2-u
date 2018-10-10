@@ -1,15 +1,52 @@
 /* Header */
 
 .header {
-    height: 101px;
-    background-color: #0071a2;
-    width: 100%;
     z-index: 999;
+    min-height: 54px;
+}
+
+.header-fixed {
+    background-color: #0071a2;
 }
 
 .header-inner {
+    width: 100%;
     max-width: 960px;
     margin: 0 auto;
+}
+
+.trust-bar {
+    height: 30px;
+    background-color: #00567a;
+}
+
+.p2u-logo {
+    width: 240px;
+    height: 49px;
+    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/logo@2x.png) no-repeat 0 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .trust-bar {
+        display: none;
+    }
+
+    .header-fixed {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 54px;
+    }
+
+    .p2u-logo {
+        width: 106px;
+        height: 15px;
+        overflow: hidden;
+    }
+    
 }
 
 /* Page Container */
