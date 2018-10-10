@@ -29,6 +29,19 @@ class HeaderBasket extends Component {
         this.props.dispatchUpdateMiniBasketStatus(status)
     }
 
+    renderQuantity() {
+        if (this.props.basket.length) {
+            const items = this.props.basket.filter(item => {
+                return item.selected === true
+            })
+
+            return items.length
+        }
+
+        return 0
+
+    }
+
     render() {
         return (
             <div className="d-flex justify-content-end">
@@ -42,8 +55,9 @@ class HeaderBasket extends Component {
                     className="basket-button btn btn-light w-100 d-none d-md-flex justify-content-between align-items-center"
                     onClick={this.handleClick}
                 >
+                    <span class="icon-basket"></span>
                     <span>{basketData.price}</span>
-                    <span className="btn btn-primary btn-sm basket-quantity">{basketData.quantity}</span>
+                    <span className="btn btn-primary btn-sm basket-quantity">{this.renderQuantity()}</span>
                 </a>
                 <MiniBasket />
             </div>
@@ -59,7 +73,8 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
     return {
-        miniBasket: state.shop.miniBasket
+        miniBasket: state.shop.miniBasket,
+        basket: state.shop.basket
     }
 }
 

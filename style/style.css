@@ -101,7 +101,8 @@ body .container-full {
     width: 24px;
     height: 26px;
     background-position: -200px -65px;
-    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png) no-repeat;
+    background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
+    background-repeat: no-repeat;
 }
 
 .basket-flyout .bf-arrow {

@@ -29,7 +29,7 @@ class MiniBasket extends Component {
                 <div className="basket-flyout p-2">
                     <div className="bf-note d-flex align-items-center p-3">
                         <span className="icon"></span>
-                        <span>Free Delivery on NHS repeat prescription items</span>
+                        <span className="pl-2">Free Delivery on NHS repeat prescription items</span>
                     </div>
                     <div className="bf-items">
                         {this.props.basket.map((item, index) => {
