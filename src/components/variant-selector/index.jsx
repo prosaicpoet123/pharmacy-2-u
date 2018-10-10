@@ -49,9 +49,9 @@ class VariantSelector extends Component {
 
     render () {
         return (
-            <div className="form-group col-12 col-sm-12 col-md-9">
+            <td className="col-12 col-sm-9 col-md-9">
                 {this.renderDropdown()}
-            </div> 
+            </td> 
         )
     }
 }

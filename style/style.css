@@ -60,7 +60,7 @@
 }
 
 .list-group {
-    min-width: 193px;
+    width: 100%;
     position: absolute;
     z-index: 999;
 }

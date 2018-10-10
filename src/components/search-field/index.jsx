@@ -77,7 +77,7 @@ class SearchField extends Component {
 
     render() {
         return (
-            <div className="form-group col-12 col-sm-12 col-md-3">
+            <td className="col-12 col-sm-3 col-md-3">
                 <div className="field-with-dropdown">
                     <div className="dropdown-content">
                         <div className="search-list">
@@ -97,7 +97,7 @@ class SearchField extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </td>
         )
     }
 

@@ -22,21 +22,17 @@ class MedicationList extends Component {
                     <table className="table">
                         <thead>
                             <tr className="row align-items-center">
-                                <th scope="col" className="col-3 col-sm-5">Items</th>
-                                <th scope="col" className="col-3 col-sm-3">Dosage Details</th>
-                                <th scope="col" className="col-3 col-sm-2">Last Dispensed</th>
-                                <th scope="col" className="col-3 col-sm-2">Action</th>
+                                <th scope="col" className="col-5 col-sm-4 col-md-5">Items</th>
+                                <th scope="col" className="col-4 col-sm-3 col-md-3">Dosage Details</th>
+                                <th scope="col" className="col-3 col-sm-2 col-md-2">Last Dispensed</th>
+                                <th scope="col" className="col-3 col-sm-3 col-md-2 d-none d-sm-block">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <SelectedItems />
-                            <tr>
-                                <td colSpan="4">
-                                    <form className="form-inline d-flex">
-                                        <SearchField />
-                                        <VariantSelector />
-                                    </form>
-                                </td>
+                            <tr className="row align-items-center">
+                                <SearchField />
+                                <VariantSelector />
                             </tr>
                         </tbody>
                     </table>
