@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class MiniBasket extends Component {
 
-    renderMiniBasketItem(name, description, selected, index) {
+    renderMiniBasketItem({name, description, selected} , index) {
         if (selected) {
             return (
                 <div key={index}
@@ -32,9 +32,9 @@ class MiniBasket extends Component {
                         <span>Free Delivery on NHS repeat prescription items</span>
                     </div>
                     <div className="bf-items">
-                        {this.props.basket.map(({item: name, description, selected}, index) => {
+                        {this.props.basket.map((item, index) => {
                             return (
-                                this.renderMiniBasketItem(name, description, selected, index)
+                                this.renderMiniBasketItem(item, index)
                             )
                         })
                         }
