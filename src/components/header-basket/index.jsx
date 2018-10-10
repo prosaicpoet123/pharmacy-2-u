@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import {dispatchUpdateMiniBasketStatus} from '../../actions'
+// Actions
+import { dispatchUpdateMiniBasketStatus } from '../../actions'
 
 // Components
 import MiniBasket from '../mini-basket'
@@ -22,7 +23,7 @@ class HeaderBasket extends Component {
 
     handleClick() {
         let status = true
-        if(this.props.miniBasket.active) {
+        if (this.props.miniBasket.active) {
             status = false
         }
         this.props.dispatchUpdateMiniBasketStatus(status)
@@ -35,14 +36,14 @@ class HeaderBasket extends Component {
                     className="basket-button d-flex d-md-none justify-content-center align-items-center"
                     onClick={this.handleClick}
                 >
-                    <span className="icon-basket"/>
+                    <span className="icon-basket" />
                 </a>
                 <a
                     className="basket-button btn btn-light w-100 d-none d-md-flex justify-content-between align-items-center"
                     onClick={this.handleClick}
                 >
                     <span>{basketData.price}</span>
-                    <span className="btn btn-primary btn-sm">{basketData.quantity}</span>
+                    <span className="btn btn-primary btn-sm basket-quantity">{basketData.quantity}</span>
                 </a>
                 <MiniBasket />
             </div>

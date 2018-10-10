@@ -19,8 +19,7 @@ class SearchField extends Component {
             currentDisplayed: this.props.items
         };
 
-        this.handleChange = this.handleChange.bind(this);
-        this.handleMouseDown = this.handleMouseDown.bind(this);
+        this.handleSearchFilter = this.handleSearchFilter.bind(this);
         this.onFocus = this.onFocus.bind(this);
         this.onBlur = this.onBlur.bind(this);
 
@@ -34,21 +33,9 @@ class SearchField extends Component {
         this.setState({ focused: false })
     }
 
-    handleChange(e) {
-        let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.value.toLowerCase()));
-        this.props.dispatchSearchTerm(e.target.value);
-        this.setState({
-            currentDisplayed: newlyDisplayed,
-        }, () => {
-            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase()});
-            this.props.dispatchSearchResult({ result });
-        });
-
-    }
-
-    handleMouseDown(e) {
-        let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.id.toLowerCase()));
-        this.props.dispatchSearchTerm(e.target.id);
+    handleSearchFilter(e) {
+        let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.toLowerCase()));
+        this.props.dispatchSearchTerm(e);
         this.setState({
             currentDisplayed: newlyDisplayed,
         }, () => {
@@ -65,7 +52,7 @@ class SearchField extends Component {
                         className="list-group-item text-uppercase"
                         id={item.name}
                         key={item.name + index}
-                        onMouseDown={this.handleMouseDown}
+                        onMouseDown={(e) => {this.handleSearchFilter(e.target.id)}}
                     >
                         {item.name}
                     </li>
@@ -86,7 +73,7 @@ class SearchField extends Component {
                                 type="text"
                                 placeholder="Type drug name here"
                                 className="form-control"
-                                onChange={(e) => { this.handleChange(e) }}
+                                onChange={(e) => { this.handleSearchFilter(e.target.value) }}
                                 onFocus={this.onFocus}
                                 onBlur={this.onBlur}
                                 value={this.props.search.searchTerm}
