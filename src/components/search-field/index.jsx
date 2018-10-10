@@ -47,7 +47,14 @@ class SearchField extends Component {
     }
 
     handleMouseDown(e) {
+        let newlyDisplayed = _.filter(this.props.items, item => item.name.includes(e.target.id.toLowerCase()));
         this.props.dispatchSearchTerm(e.target.id);
+        this.setState({
+            currentDisplayed: newlyDisplayed,
+        }, () => {
+            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase()});
+            this.props.dispatchSearchResult({ result });
+        });
     }
 
     renderSearchTerms() {

@@ -5,24 +5,67 @@ export const initialState = {
 			name: "asparaginase",
 			variants: [
 				{
-					name: "Variant 1",
+					name: "asparaginase",
+					description: "caplets 300mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "1"
 				},
 				{
-					name: "Variant 2",
+					name: "asparaginase",
+					description: "dispersible tablet 300mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "2"
 				},
 				{
-					name: "Variant 3",
+					name: "asparaginase",
+					description: "dispersible tablet 300mg + 200mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "3"
 				},
 				{
-					name: "Variant 4",
+					name: "asparaginase",
+					description: "dispersible tablet 75mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "4"
 				},
 				{
-					name: "Variant 5",
+					name: "asparaginase",
+					description: "ec tablets 75mg effervescent tablet",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "5"
+				},
+				{
+					name: "asparaginase",
+					description: "enteric coated tablets 300mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "6"
+				},
+				{
+					name: "asparaginase",
+					description: "enteric coated tablets 75mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "7"
+				},
+				{
+					name: "asparaginase",
+					description: "gastro-resistant tablets 300mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "8"
+				},
+				{
+					name: "asparaginase",
+					description: "powder",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "9"
 				}
 			],
 		},
@@ -31,23 +74,38 @@ export const initialState = {
 			name: "aspav",
 			variants: [
 				{
-					name: "Variant 6",
+					name: "aspav",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "1"
 				},
 				{
-					name: "Variant 7",
+					name: "aspav",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "2"
 				},
 				{
-					name: "Variant 8",
+					name: "aspav",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "3"
 				},
 				{
-					name: "Variant 9",
+					name: "aspav",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "4"
 				},
 				{
-					name: "Variant 10",
+					name: "aspav",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "5"
 				}
 			],
@@ -118,7 +176,7 @@ export const initialState = {
 					dosageDetails: "We will get this from your GP",
 					lastDispensed: "None",
 					id: "9"
-				},
+				}
 			],
 		},
 		{
@@ -126,53 +184,117 @@ export const initialState = {
 			name: "aspro",
 			variants: [
 				{
-					name: "Variant 16",
+					name: "aspro",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "1"
 				},
 				{
-					name: "Variant 17",
+					name: "aspro",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "2"
 				},
 				{
-					name: "Variant 18",
+					name: "aspro",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "3"
 				},
 				{
-					name: "Variant 19",
+					name: "aspro",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "4"
 				},
 				{
-					name: "Variant 20",
+					name: "aspro",
+					description: "description of product",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "5"
 				}
 			],
 		},
 		{
 			id: "5",
-			name: "Product 5",
+			name: "ibuprofen",
 			variants: [
 				{
-					name: "Variant 21",
+					name: "Ibuprofen",
+					description: "tablets 400mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "1"
 				},
 				{
-					name: "Variant 22",
+					name: "Ibuprofen",
+					description: "tablets 200mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "2"
 				},
 				{
-					name: "Variant 23",
+					name: "Ibuprofen",
+					description: "10% pain relief gel",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "3"
 				},
 				{
-					name: "Variant 24",
+					name: "Ibuprofen",
+					description: "liquid caps 400mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "4"
 				},
 				{
-					name: "Variant 25",
+					name: "Ibuprofen",
+					description: "liquid caps 200mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
 					id: "5"
 				}
 			],
 		},
+		{
+			id: "5",
+			name: "paracetamol",
+			variants: [
+				{
+					name: "Paracetamol",
+					description: "tablets 500mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "1"
+				},
+				{
+					name: "Paracetamol",
+					description: "capsules 500mg",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "2"
+				},
+				{
+					name: "Paracetamol",
+					description: "soluble tablets",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "3"
+				},
+				{
+					name: "Paracetamol",
+					description: "liquid",
+					dosageDetails: "We will get this from your GP",
+					lastDispensed: "None",
+					id: "4"
+				}
+			],
+		}
 	],
 
 	basket: []

@@ -17,7 +17,6 @@ class SelectedItems extends Component {
     }
 
     handleToggle(index) {
-        console.log(index)
         this.props.toggleSelected(index)
     }
 
