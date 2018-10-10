@@ -34,7 +34,9 @@ body .container-full {
 }
 
 .icon-basket {
-    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png) no-repeat -21px 0;
+    background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -42px 0;
     width: 21px;
     height: 18px;
 }
@@ -56,6 +58,10 @@ body .container-full {
         width: 106px;
         height: 15px;
         overflow: hidden;
+    }
+
+    .icon-basket {
+        background-position: -23px 0;
     }
 
     .basket-button {

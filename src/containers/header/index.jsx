@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import HeaderBasket from '../../components/header-basket';
 
-class Header extends Component {
-    render() {
+const Header = () => {
         return (
             <header>
                 <div className="trust-bar"></div>
@@ -23,7 +22,6 @@ class Header extends Component {
                 </div>
             </header>
         );
-    }
 
 }
 
