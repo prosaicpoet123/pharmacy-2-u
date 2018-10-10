@@ -58,7 +58,6 @@ export function toggleSelected(selection) {
 }
 
 export function dispatchUpdateMiniBasketStatus(status) {
-	console.log(status)
 	return {
 		type: DISPATCH_UPDATE_MINI_BASKET_STATUS,
 		payload: status
