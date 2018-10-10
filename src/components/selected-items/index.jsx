@@ -25,21 +25,21 @@ class SelectedItems extends Component {
     }
 
     renderSelectedItems() {
-        return this.props.basket.map((item, index) => {
+        return this.props.basket.map(({name, description, dosageDetails, lastDispensed, selected}, index) => {
             return (
                 <tr
-                    className={`row align-items-center ${item.selected && 'selected'}`}
-                    key={item.name + index}
+                    className={`row align-items-center ${selected && 'selected'}`}
+                    key={name + index}
                 >
                     <td className="col-5 col-sm-4 col-md-5">
-                        <span className="text-uppercase font-weight-bold d-block">{item.name}</span>
-                        <span className="text-lowercase font-italic">{item.description}</span>
+                        <span className="text-uppercase font-weight-bold d-block">{name}</span>
+                        <span className="text-lowercase font-italic">{description}</span>
                     </td>
-                    <td className="col-4 col-sm-3 col-md-3 font-italic">{item.dosageDetails}</td>
-                    <td className="col-3 col-sm-2 col-md-2">{item.lastDispensed}</td>
+                    <td className="col-4 col-sm-3 col-md-3 font-italic">{dosageDetails}</td>
+                    <td className="col-3 col-sm-2 col-md-2">{lastDispensed}</td>
                     <td className="col-8 d-block d-sm-none"/>
                     <td className="col-4 col-sm-3 col-md-2 d-flex justify-content-start">
-                        {item.selected ?
+                        {selected ?
                             <button type="button" className="btn btn-outline-success btn-round btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>-</button>
                             :
                             <button type="button" className="btn btn-success btn-round btn-sm font-weight-bold" onClick={() => this.handleToggle(index)}>+</button>
@@ -49,7 +49,7 @@ class SelectedItems extends Component {
                 </tr>
             )
         })
-    } 4
+    }
 
     render() {
         return (

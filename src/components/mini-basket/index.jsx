@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class MiniBasket extends Component {
 
-    renderMiniBasketItem({name, description, selected} , index) {
+    renderMiniBasketItem({ name, description, selected }, index) {
         if (selected) {
             return (
                 <div key={index}

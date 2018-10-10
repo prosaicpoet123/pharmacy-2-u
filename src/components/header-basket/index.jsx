@@ -8,11 +8,6 @@ import { dispatchUpdateMiniBasketStatus } from '../../actions'
 // Components
 import MiniBasket from '../mini-basket'
 
-const basketData = {
-    price: '£0.00',
-    quantity: 1,
-}
-
 class HeaderBasket extends Component {
 
     constructor(props) {
@@ -39,7 +34,6 @@ class HeaderBasket extends Component {
         }
 
         return 0
-
     }
 
     render() {
@@ -55,8 +49,8 @@ class HeaderBasket extends Component {
                     className="basket-button btn btn-light w-100 d-none d-md-flex justify-content-between align-items-center"
                     onClick={this.handleClick}
                 >
-                    <span class="icon-basket"></span>
-                    <span>{basketData.price}</span>
+                    <span className="icon-basket"></span>
+                    <span>£0.00</span>
                     <span className="btn btn-primary btn-sm basket-quantity">{this.renderQuantity()}</span>
                 </a>
                 <MiniBasket />
