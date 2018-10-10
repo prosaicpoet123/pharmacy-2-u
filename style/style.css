@@ -33,7 +33,13 @@ body .container-full {
     background-size: cover;
 }
 
-@media only screen and (max-width: 600px) {
+.icon-basket {
+    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png) no-repeat -21px 0;
+    width: 21px;
+    height: 18px;
+}
+
+@media only screen and (max-width: 768px) {
 
     .trust-bar {
         display: none;
@@ -51,6 +57,15 @@ body .container-full {
         height: 15px;
         overflow: hidden;
     }
+
+    .basket-button {
+        height: 54px;
+        width: 54px;
+    }
+
+    .header-fixed .position-sm-static {
+        position: static;
+    }
     
 }
 
@@ -58,7 +73,7 @@ body .container-full {
 
 .basket-flyout {
     position: absolute;
-    top: 48px;
+    top: 52px;
     right: 0;
     width: 515px;
     border: 1px solid #e7eaec;
@@ -94,6 +109,20 @@ body .container-full {
     color: #383f43;
 }
 
+@media only screen and (max-width: 768px) {
+
+    .basket-flyout {
+        width: 100%;
+        top: 54px;
+    }
+
+    .basket-flyout .bf-arrow {
+        right: 12px;
+    }
+    
+}
+
+
 /* Page Container */
 
 .page-inner {
@@ -127,6 +156,7 @@ body .container-full {
     line-height: 1.2;
     font-weight: normal;
     color: #0071a2;
+    position: initial;
 }
 
 .table .row {

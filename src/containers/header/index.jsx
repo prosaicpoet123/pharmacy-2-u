@@ -15,7 +15,7 @@ class Header extends Component {
                             </div>
                             <div className="col-2 col-sm-3"></div>
                             <div className="col-2 col-sm-2"></div>
-                            <div className="col-2 col-sm-3 p-0">
+                            <div className="col-2 col-sm-3 p-0 position-sm-static">
                                 <HeaderBasket />
                             </div>
                         </div>
