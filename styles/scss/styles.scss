@@ -1,0 +1,37 @@
+
+/* imports */
+
+// Containers
+@import '../../src/containers/header/styles';
+@import '../../src/containers/page-container/styles';
+
+// Components
+@import '../../src/components/mini-basket/styles';
+@import '../../src/components/item-list/styles';
+@import '../../src/components/search-field/styles';
+@import '../../src/components/selected-items/styles';
+
+body .container-full {
+    font-size: 14px;
+    color: #383f43;
+}
+
+/* Typography */
+
+.page-inner h1 {
+    color: #00567a;
+}
+
+.page-inner h2 {
+    color: #0071a2;
+}
+
+/* Button overwrites */
+
+.btn.btn-round {
+    border-radius: 30px;
+    padding: 4px 11px;
+    border-width: 2px;
+    width: 34px;
+    height: 34px;
+}

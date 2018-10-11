@@ -1,0 +1,175 @@
+/* imports */
+/* Header */
+.header {
+  z-index: 999;
+  min-height: 54px; }
+  .header .trust-bar {
+    height: 30px;
+    background-color: #00567a; }
+    @media (max-width: 768px) {
+      .header .trust-bar {
+        display: none; } }
+  .header .header-fixed {
+    background-color: #0071a2; }
+    @media (max-width: 768px) {
+      .header .header-fixed {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 54px; } }
+    @media (max-width: 768px) {
+      .header .header-fixed .position-sm-static {
+        position: static; } }
+    .header .header-fixed .header-inner {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto; }
+      .header .header-fixed .header-inner .p2u-logo {
+        width: 240px;
+        height: 49px;
+        background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/logo@2x.png) no-repeat 0 0;
+        -webkit-background-size: cover;
+        background-size: cover; }
+        @media (max-width: 768px) {
+          .header .header-fixed .header-inner .p2u-logo {
+            width: 106px;
+            height: 15px;
+            overflow: hidden; } }
+      @media (max-width: 768px) {
+        .header .header-fixed .header-inner .basket-button {
+          background-color: #0071a2;
+          height: 54px;
+          width: 54px; } }
+      .header .header-fixed .header-inner .basket-button .icon-basket {
+        background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
+        background-repeat: no-repeat;
+        background-position: -21px 0;
+        width: 21px;
+        height: 18px; }
+        @media (max-width: 768px) {
+          .header .header-fixed .header-inner .basket-button .icon-basket {
+            background-position: -23px 0; } }
+      .header .header-fixed .header-inner .basket-button .btn-primary {
+        background-color: #0071a2;
+        border-color: #0071a2; }
+      .header .header-fixed .header-inner .basket-button .basket-quantity {
+        border-radius: 50px;
+        padding: 4px 11px; }
+      .header .header-fixed .header-inner .basket-button.btn-light .icon-basket {
+        background-position: -42px 0; }
+
+.basket-button {
+  background-color: #f05f22;
+  color: #fff; }
+  .basket-button .basket-subtotal {
+    color: #fff; }
+
+.basket-button.btn-light .basket-subtotal {
+  color: #0071a2; }
+
+/* Page Container */
+.page-inner {
+  max-width: 960px;
+  margin: 24px auto 0 auto;
+  padding: 0px 8px; }
+
+/* basket flyout */
+.basket-flyout {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  width: 515px;
+  border: 1px solid #e7eaec;
+  background: #fff;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+  z-index: 999; }
+  @media (max-width: 768px) {
+    .basket-flyout {
+      width: 100%;
+      top: 54px; } }
+  .basket-flyout .bf-note .icon {
+    width: 24px;
+    height: 26px;
+    background-position: -200px -65px;
+    background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
+    background-repeat: no-repeat; }
+  .basket-flyout .bf-arrow {
+    position: absolute;
+    width: 28px;
+    height: 14px;
+    top: -14px;
+    right: 65px;
+    background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png) no-repeat -63px 0; }
+    @media (max-width: 768px) {
+      .basket-flyout .bf-arrow {
+        right: 12px; } }
+  .basket-flyout .bf-flyout .bf-subtotal .subtotal,
+  .basket-flyout .bf-items .bf-item {
+    color: #0288d1; }
+  .basket-flyout .bf-items .bf-item .subtotal,
+  .basket-flyout .bf-items .bf-item .quantity {
+    color: #383f43; }
+
+/* Item-list */
+.table {
+  border-spacing: 0px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  border-collapse: unset; }
+  .table .row {
+    border-bottom: 1px solid #ddd;
+    margin-left: 0px;
+    margin-right: 0px; }
+  .table thead > tr > th,
+  .table tbody > tr > td {
+    border: none;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: normal;
+    color: #0071a2;
+    position: initial; }
+
+/* Search results list */
+.search-list {
+  position: relative; }
+
+.list-group {
+  width: 100%;
+  position: absolute;
+  z-index: 999; }
+
+.list-group-item:hover {
+  background-color: #0071a2;
+  color: #fff;
+  cursor: pointer; }
+
+/* Selected items */
+tr.row.selected {
+  border-bottom: 2px solid #28a745;
+  border-bottom: 2px solid #28a745;
+  border-collapse: collapse;
+  background: rgba(40, 167, 69, 0.05); }
+  tr.row.selected td {
+    color: #28a745; }
+
+body .container-full {
+  font-size: 14px;
+  color: #383f43; }
+
+/* Typography */
+.page-inner h1 {
+  color: #00567a; }
+
+.page-inner h2 {
+  color: #0071a2; }
+
+/* Button overwrites */
+.btn.btn-round {
+  border-radius: 30px;
+  padding: 4px 11px;
+  border-width: 2px;
+  width: 34px;
+  height: 34px; }
