@@ -1,6 +1,6 @@
 ```
 > git clone https://github.com/prosaicpoet123/pharmacy-2-u
-> cd pharmacy2u
+> cd pharmacy-2-u
 > npm install
 > npm start
 
