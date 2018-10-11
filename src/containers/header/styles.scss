@@ -1,0 +1,109 @@
+/* Header */
+
+.header {
+
+    z-index: 999;
+    min-height: 54px;
+
+    .trust-bar {
+        height: 30px;
+        background-color: #00567a;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .header-fixed  {
+        background-color: #0071a2;
+
+        @media (max-width: 768px) {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            height: 54px;
+        }
+
+        .position-sm-static {
+
+            @media (max-width: 768px) {
+                position: static;
+            }
+        }
+
+        .header-inner {
+            width: 100%;
+            max-width: 960px;
+            margin: 0 auto;
+
+            .p2u-logo {
+                width: 240px;
+                height: 49px;
+                background: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/logo@2x.png) no-repeat 0 0;
+                -webkit-background-size: cover;
+                background-size: cover;
+
+                @media (max-width: 768px) {
+                    width: 106px;
+                    height: 15px;
+                    overflow: hidden;
+                }
+            }
+
+            .basket-button {
+
+                @media (max-width: 768px) {
+                    background-color: #0071a2;
+                    height: 54px;
+                    width: 54px;
+                }
+
+                .icon-basket {
+                    background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
+                    background-repeat: no-repeat;
+                    background-position: -21px 0;
+                    width: 21px;
+                    height: 18px;
+
+                    @media (max-width: 768px) {
+                        background-position: -23px 0;
+                    }
+                }
+
+                .btn-primary {
+                    background-color: #0071a2;
+                    border-color: #0071a2;
+                }
+
+                .basket-quantity {
+                    border-radius: 50px;
+                    padding: 4px 11px;
+                }
+
+            }
+
+            .basket-button.btn-light {
+
+                .icon-basket {
+                    background-position: -42px 0;
+                }
+            }
+        }
+    }
+}
+
+.basket-button {
+    background-color: #f05f22;
+    color: #fff;
+
+    .basket-subtotal {
+        color: #fff;
+    }
+}
+
+.basket-button.btn-light {
+
+    .basket-subtotal {
+        color: #0071a2;;
+    }
+}
