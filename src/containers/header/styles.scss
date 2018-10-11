@@ -49,61 +49,6 @@
                     overflow: hidden;
                 }
             }
-
-            .basket-button {
-
-                @media (max-width: 768px) {
-                    background-color: #0071a2;
-                    height: 54px;
-                    width: 54px;
-                }
-
-                .icon-basket {
-                    background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
-                    background-repeat: no-repeat;
-                    background-position: -21px 0;
-                    width: 21px;
-                    height: 18px;
-
-                    @media (max-width: 768px) {
-                        background-position: -23px 0;
-                    }
-                }
-
-                .btn-primary {
-                    background-color: #0071a2;
-                    border-color: #0071a2;
-                }
-
-                .basket-quantity {
-                    border-radius: 50px;
-                    padding: 4px 11px;
-                }
-
-            }
-
-            .basket-button.btn-light {
-
-                .icon-basket {
-                    background-position: -42px 0;
-                }
-            }
         }
-    }
-}
-
-.basket-button {
-    background-color: #f05f22;
-    color: #fff;
-
-    .basket-subtotal {
-        color: #fff;
-    }
-}
-
-.basket-button.btn-light {
-
-    .basket-subtotal {
-        color: #0071a2;;
     }
 }

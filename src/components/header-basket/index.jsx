@@ -67,6 +67,7 @@ class HeaderBasket extends Component {
                     onClick={this.handleClick}
                 >
                     <span className="icon-basket" />
+                    <span className="roundel">{this.renderQuantity()}</span>
                 </a>
                 <a
                     className={`${this.props.miniBasket.active && 'btn-light'} basket-button btn w-100 d-none d-md-flex justify-content-between align-items-center`}

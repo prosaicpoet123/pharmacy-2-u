@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Components
 import HeaderBasket from '../../components/header-basket';
 
 const Header = () => {

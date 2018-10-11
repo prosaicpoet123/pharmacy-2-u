@@ -1,6 +1,6 @@
 import React from 'react';
 
-//Components
+// Components
 import SearchField from '../search-field'
 import VariantSelector from '../variant-selector'
 import SelectedItems from '../selected-items'

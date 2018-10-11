@@ -1,5 +1,17 @@
 import { createSelector } from 'reselect'
 
+const shopItemsSelector = state => state.shop.basket
+
+const getSelected = createSelector(
+	[shopItemsSelector],
+	items => items.filter(item => item.selected === true)
+)
+
+export const subtotalSelector = createSelector(
+	[getSelected],
+	items => items.reduce((totalsum, item) => totalsum + item.price, 0).toFixed(2)
+)
+
 export const initialState = {
 		items: [
 		{
@@ -339,17 +351,3 @@ export const initialState = {
 	basket: []
 
 }
-
-
-const shopItemsSelector = state => state.shop.basket
-
-const getSelected = createSelector(
-	[shopItemsSelector],
-	items => items.filter(item => item.selected === true)
-)
-
-export const subtotalSelector = createSelector(
-	[getSelected],
-	items => items.reduce((totalsum, item) => totalsum + item.price, 0)
-)
-
