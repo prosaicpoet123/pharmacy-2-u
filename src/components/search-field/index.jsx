@@ -39,7 +39,7 @@ class SearchField extends Component {
         this.setState({
             currentDisplayed: newlyDisplayed,
         }, () => {
-            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase()});
+            let result = _.find(this.props.items, { "name": this.props.search.searchTerm.toLowerCase() });
             this.props.dispatchSearchResult({ result });
         });
     }
@@ -52,7 +52,7 @@ class SearchField extends Component {
                         className="list-group-item text-uppercase"
                         id={item.name}
                         key={item.name + index}
-                        onMouseDown={(e) => {this.handleSearchFilter(e.target.id)}}
+                        onMouseDown={(e) => { this.handleSearchFilter(e.target.id) }}
                     >
                         {item.name}
                     </li>

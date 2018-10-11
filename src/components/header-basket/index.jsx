@@ -14,6 +14,26 @@ class HeaderBasket extends Component {
         super(props);
 
         this.handleClick = this.handleClick.bind(this);
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    }
+
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    }
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.props.dispatchUpdateMiniBasketStatus(status)
+        }
     }
 
     handleClick() {
@@ -38,7 +58,7 @@ class HeaderBasket extends Component {
 
     render() {
         return (
-            <div className="d-flex justify-content-end">
+            <div ref={this.setWrapperRef} className="d-flex justify-content-end">
                 <a
                     className="basket-button d-flex d-md-none justify-content-center align-items-center"
                     onClick={this.handleClick}
