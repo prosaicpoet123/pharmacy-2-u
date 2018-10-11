@@ -27,7 +27,6 @@ class MiniBasket extends Component {
     }
 
     renderMiniBasket() {
-        console.log(this.props.subtotal)
         if (this.props.miniBasket.active) {
             return (
                 <div className="basket-flyout p-2">
