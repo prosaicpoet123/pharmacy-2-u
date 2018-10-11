@@ -69,12 +69,12 @@ class HeaderBasket extends Component {
                     <span className="icon-basket" />
                 </a>
                 <a
-                    className="basket-button btn btn-light w-100 d-none d-md-flex justify-content-between align-items-center"
+                    className={`${this.props.miniBasket.active && 'btn-light'} basket-button btn w-100 d-none d-md-flex justify-content-between align-items-center`}
                     onClick={this.handleClick}
                 >
                     <span className="icon-basket"></span>
-                    <span>£{this.props.subtotal === 0 ? '0.00' : this.props.subtotal}</span>
-                    <span className="btn btn-primary btn-sm basket-quantity">{this.renderQuantity()}</span>
+                    <span className="basket-subtotal">£{this.props.subtotal === 0 ? '0.00' : this.props.subtotal}</span>
+                    <span className={`${this.props.miniBasket.active ? 'btn-primary' : 'btn-light'} btn btn-sm basket-quantity`} >{this.renderQuantity()}</span>
                 </a>
                 <MiniBasket />
             </div>

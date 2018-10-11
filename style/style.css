@@ -33,18 +33,39 @@ body .container-full {
     background-size: cover;
 }
 
-.icon-basket {
+.basket-button .icon-basket {
     background-image: url(https://static.pharmacy2u.co.uk//OTC/NewDesign/images/2017/p2u-sprite.png);
     background-repeat: no-repeat;
-    background-position: -42px 0;
+    background-position: -21px 0;
     width: 21px;
     height: 18px;
+}
+
+.basket-button.btn-light .icon-basket {
+    background-position: -42px 0;
+}
+
+.basket-button .btn-primary {
+    background-color: #0071a2;
+    border-color: #0071a2;
+}
+
+.basket-button {
+    background-color: #f05f22;
+    color: #fff;
 }
 
 .basket-button .basket-quantity {
     border-radius: 50px;
     padding: 4px 11px;
+}
 
+.basket-button .basket-subtotal {
+    color: #fff;
+}
+
+.btn-light.basket-button .basket-subtotal {
+    color: #0071a2;
 }
 
 @media only screen and (max-width: 768px) {
@@ -71,6 +92,7 @@ body .container-full {
     }
 
     .basket-button {
+        background-color: #0071a2;
         height: 54px;
         width: 54px;
     }
