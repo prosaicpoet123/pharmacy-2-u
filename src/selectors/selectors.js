@@ -340,12 +340,16 @@ export const initialState = {
 
 }
 
-const getBasket = (state) => state.shop.basket
 
 const shopItemsSelector = state => state.shop.basket
 
-export const subtotalSelector = createSelector(
+const getSelected = createSelector(
 	[shopItemsSelector],
+	items => items.filter(item => item.selected === true)
+)
+
+export const subtotalSelector = createSelector(
+	[getSelected],
 	items => items.reduce((totalsum, item) => totalsum + item.price, 0)
-  )
+)
 
