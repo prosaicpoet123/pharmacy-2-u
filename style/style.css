@@ -200,11 +200,9 @@ body .container-full {
 
 tr.row.selected {
     border-bottom: 2px solid #28a745;
+    border-bottom: 2px solid #28a745;
+    border-collapse: collapse;
     background: rgba(40, 167, 69, 0.05);
-}
-
-tr.row.selected:first-child {
-    border-top: 2px solid #28a745;
 }
 
 tr.row.selected td {
