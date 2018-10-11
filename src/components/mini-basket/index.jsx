@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+// Selectors
+import { subtotalSelector } from '../../selectors/selectors'
+
 class MiniBasket extends Component {
 
-    renderMiniBasketItem({ name, description, selected }, index) {
+    renderMiniBasketItem({ name, description, selected, price }, index) {
         if (selected) {
             return (
                 <div key={index}
@@ -11,7 +14,7 @@ class MiniBasket extends Component {
                     <div className="bf-item">
                         <span className="text-uppercase font-weight-bold name">{name} </span>
                         <span className="description">{description}</span>
-                        <span className="d-block subtotal">£0.00</span>
+                        <span className="d-block subtotal">£{price}</span>
                     </div>
                     <div className="quantity">
                         Qty: 1
@@ -24,6 +27,7 @@ class MiniBasket extends Component {
     }
 
     renderMiniBasket() {
+        console.log(this.props.subtotal)
         if (this.props.miniBasket.active) {
             return (
                 <div className="basket-flyout p-2">
@@ -41,7 +45,7 @@ class MiniBasket extends Component {
                     </div>
                     <div className="text-right p-3 border-top font-weight-bold bf-subtotal">
                         Subtotal
-                        <span className="ml-3 subtotal">£0.00</span>
+                        <span className="ml-3 subtotal">£{this.props.subtotal === 0 ? '0.00' : this.props.subtotal}</span>
                     </div>
                     <span className="bf-arrow"></span>
                 </div>
@@ -61,7 +65,8 @@ class MiniBasket extends Component {
 function mapStateToProps(state) {
     return {
         miniBasket: state.shop.miniBasket,
-        basket: state.shop.basket
+        basket: state.shop.basket,
+        subtotal: subtotalSelector(state)
     }
 }
 

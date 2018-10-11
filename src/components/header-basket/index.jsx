@@ -8,6 +8,9 @@ import { dispatchUpdateMiniBasketStatus } from '../../actions'
 // Components
 import MiniBasket from '../mini-basket'
 
+// Selectors 
+import { subtotalSelector } from '../../selectors/selectors'
+
 class HeaderBasket extends Component {
 
     constructor(props) {
@@ -70,7 +73,7 @@ class HeaderBasket extends Component {
                     onClick={this.handleClick}
                 >
                     <span className="icon-basket"></span>
-                    <span>£0.00</span>
+                    <span>£{this.props.subtotal === 0 ? '0.00' : this.props.subtotal}</span>
                     <span className="btn btn-primary btn-sm basket-quantity">{this.renderQuantity()}</span>
                 </a>
                 <MiniBasket />
@@ -88,7 +91,8 @@ function mapDispatchToProps(dispatch) {
 function mapStateToProps(state) {
     return {
         miniBasket: state.shop.miniBasket,
-        basket: state.shop.basket
+        basket: state.shop.basket,
+        subtotal: subtotalSelector(state)
     }
 }
 
